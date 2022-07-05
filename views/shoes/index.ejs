@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <a href="/"/>Home</a>
+    <a href="/shoes/new"/>Add Shoe</a>
+    <h1>Collection</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Make</th>
+          <th>Model</th>
+          <th>Colourway</th>
+          <th>Release Year</th>
+          <th>Price Paid</th>
+        </tr>
+      </thead>
+    <tbody>
+    <% shoes.forEach(function(m){ %>
+      <tr>
+        <td><%= m.make %></td>
+        <td><%= m.model %></td>
+        <td><%= m.colour %></td>
+        <td><%= m.year %></td>
+        <td><%= m.price %></td>
+      </tr>
+      <%});%>
+    </tbody>
+    </table>
+  </body>
+</html>
