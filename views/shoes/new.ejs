@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Sneaker Closet</title>
+  </head>
+  <h1>Enter a New Shoe</h1>
+  <body>
+    <nav>
+        <div class="navbar">
+          <div class="container nav-container">
+              <input class="checkbox" type="checkbox" name="" id="" />
+              <div class="hamburger-lines">
+                <span class="line line1"></span>
+                <span class="line line2"></span>
+                <span class="line line3"></span>
+              </div>  
+            <div class="logo">
+              <!-- <h1>Navbar</h1> -->
+            </div>
+            <div class="menu-items">
+              <li><a href="/"/>Home</a></li>
+              <li><a href="/shoes"/>Collection</a></li>
+            </div>
+          </div>
+        </div>
+      </nav>
+    <!-- <a href="/"/>Home</a>
+    <a href="/shoes"/>Collection</a> -->
+    <!-- <h2>Enter a New Shoe</h2> -->
+    <form action="/shoes" method="POST">
+      <label>Make: <input type="text" name="make" /> </label><br />
+      <label>Model: <input type="text" name="model" /> </label><br />
+      <label>Colourway: <input type="text" name="colour" /> </label><br />
+      <label>Release Year: <input type="text" name="year" /> </label
+      ><br />
+      <label>Price Paid: <input type="text" name="price" /> </label><br />
+      <br />
+      <input type="submit" value="Add Shoe" />
+    </form>
+  </body>
+</html>
