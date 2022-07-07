@@ -11,6 +11,11 @@ router.get("/new", shoesCtrl.new);
 //post /shoes
 router.post("/", shoesCtrl.create);
 
+//delete /shoes
+router.delete("/:id", shoesCtrl.delete);
+
+router.get("/:id", shoesCtrl.show);
+
 /* GET users listing. */
 // router.get('/', function(req, res, next) {
 //   res.send('respond with a resource');

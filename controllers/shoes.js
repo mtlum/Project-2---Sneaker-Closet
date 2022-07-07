@@ -19,15 +19,25 @@ function index(req, res) {
   });
 }
 
-// function show(req, res) {
-//   Shoe.findById(req.params.id, function (err, shoe) {
-//     res.render("shoes/show.ejs", { shoe });
-//   });
-// }
+function show(req, res) {
+  Shoe.findById(req.params.id, function (err, shoe) {
+    res.render("shoes/show.ejs", { shoe });
+  });
+}
+
+function deleteShoe(req, res) {
+  Shoe.findById(req.params.id, function (err, shoe) {
+    shoe.remove();
+    shoe.save(function (err) {
+      res.redirect("/shoes");
+    });
+  });
+}
 
 module.exports = {
   new: newShoe,
   create,
   index,
-  //   show,
+  show,
+  delete: deleteShoe,
 };

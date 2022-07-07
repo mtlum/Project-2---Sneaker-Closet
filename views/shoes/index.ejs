@@ -16,26 +16,27 @@
                 <span class="line line3"></span>
               </div>  
             <div class="logo">
-              <!-- <h1>Navbar</h1> -->
             </div>
             <div class="menu-items">
               <li><a href="/"/>Home</a></li>
               <li><a href="/shoes/new"/>Add Shoe</a></li>
+              <li><a href="/shoes/adidas"/>Adidas</a></li>
+              <li><a href="/shoes/jordan"/>Jordan</a></li>
+              <li><a href="/shoes/nike"/>Nike</a></li>
+              <li><a href="/shoes/other"/>Other</a></li>
             </div>
           </div>
         </div>
       </nav>
-    <!-- <a href="/"/>Home</a>
-    <a href="/shoes/new"/>Add Shoe</a> -->
-    <!-- <h1>Collection</h1> -->
     <table id="chart">
       <thead>
         <tr>
-          <th onclick="sortTable(0)">Make |</th>
-          <th onclick="sortTable(1)">Model |</th>
-          <th onclick="sortTable(2)">Colourway |</th>
-          <th onclick="sortTable(3)">Release year |</th>
-          <th onclick="sortTable(4)">Price Paid |</th>
+          <th onclick="sortTable(0)">Make | </th>
+          <th onclick="sortTable(1)">Model | </th>
+          <th onclick="sortTable(2)">Colourway | </th>
+          <th onclick="sortTable(3)">Release year | </th>
+          <th onclick="sortTable(4)">Price Paid | </th>
+          <th> More Info </th>
         </tr>
       </thead>
     <tbody>
@@ -45,60 +46,50 @@
         <td><%= m.model %></td>
         <td><%= m.colour %></td>
         <td><%= m.year %></td>
-        <td><%= m.price %></td>
+        <td>$<%= m.price %></td>
+        <td><button class="moreInfo" href="/shoes/<%=shoe.id%>" >More Info</button></td>
+    </td>
       </tr>
       <%});%>
     </tbody>
     </table>
-  
+
+    <!-- <td><form action="/shoes<%=shoe.id%>/?_method=DELETE"
+        method="DELETE">
+    <button class="deleteShoe" type="submit">Delete Shoe</button>
+    </form> -->
+
+    <!-- action="/shoes/<%=shoe.id%>/?_method=DELETE" -->
     <script> //https://www.w3schools.com/howto/howto_js_sort_table.asp#:~:text=Sort%20Table%20by%20Clicking%20the,ascending%20(A%20to%20Z).
         function sortTable(n) {
           var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
           table = document.getElementById("chart");
           switching = true;
-          // Set the sorting direction to ascending:
           dir = "asc";
-          /* Make a loop that will continue until
-          no switching has been done: */
           while (switching) {
-            // Start by saying: no switching is done:
             switching = false;
             rows = table.rows;
-            /* Loop through all table rows (except the
-            first, which contains table headers): */
             for (i = 1; i < (rows.length - 1); i++) {
-              // Start by saying there should be no switching:
               shouldSwitch = false;
-              /* Get the two elements you want to compare,
-              one from current row and one from the next: */
               x = rows[i].getElementsByTagName("TD")[n];
               y = rows[i + 1].getElementsByTagName("TD")[n];
-              /* Check if the two rows should switch place,
-              based on the direction, asc or desc: */
               if (dir == "asc") {
                 if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-                  // If so, mark as a switch and break the loop:
                   shouldSwitch = true;
                   break;
                 }
               } else if (dir == "desc") {
                 if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
-                  // If so, mark as a switch and break the loop:
                   shouldSwitch = true;
                   break;
                 }
               }
             }
             if (shouldSwitch) {
-              /* If a switch has been marked, make the switch
-              and mark that a switch has been done: */
               rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
               switching = true;
-              // Each time a switch is done, increase this count by 1:
               switchcount ++;
             } else {
-              /* If no switching has been done AND the direction is "asc",
-              set the direction to "desc" and run the while loop again. */
               if (switchcount == 0 && dir == "asc") {
                 dir = "desc";
                 switching = true;
