@@ -34,20 +34,20 @@
           <th onclick="sortTable(0)">Make | </th>
           <th onclick="sortTable(1)">Model | </th>
           <th onclick="sortTable(2)">Colourway | </th>
-          <th onclick="sortTable(3)">Release year | </th>
-          <th onclick="sortTable(4)">Price Paid | </th>
+          <!-- <th onclick="sortTable(3)">Release year | </th>
+          <th onclick="sortTable(4)">Price Paid | </th> -->
           <th> More Info </th>
         </tr>
       </thead>
     <tbody>
-    <% shoes.forEach(function(m){ %>
+    <% shoes.forEach(function(s){ %>
       <tr>
-        <td><%= m.make %></td>
-        <td><%= m.model %></td>
-        <td><%= m.colour %></td>
-        <td><%= m.year %></td>
-        <td>$<%= m.price %></td>
-        <td><button class="moreInfo" href="/shoes/<%=shoe.id%>" >More Info</button></td>
+        <td><%= s.make %></td>
+        <td><%= s.model %></td>
+        <td><%= s.colour %></td>
+        <!-- <td><%= s.year %></td>
+        <td>$<%= s.price %></td> -->
+        <td><a href="/shoes/<%=s._id%>" >More Info</a></td>
     </td>
       </tr>
       <%});%>

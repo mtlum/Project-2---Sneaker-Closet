@@ -28,25 +28,12 @@
         </div>
       </div>
     </nav>
+    <form action="/shoes/update/<%= shoe.id %>/?_method=POST" method="PUT">
       <div><%= shoe.make %></div>
       <div><%= shoe.model %></div>
       <div><%= shoe.colour %></div>
       <div><%= shoe.year %></div>
       <div>$<%= shoe.price %></div>
       <div><%= shoe.sold ? "Sold" : "Still In Collection" %></div>
-  </br>
-  <form action="/shoes/update/<%= shoe.id %>">
-    <label
-    >Sold:
-    <input type="checkbox" name="sold" checked /> </label
-  ><br />
-  <input type="submit" value="Sold" />
-</form>
-  </br>
-    <form
-      method="POST"
-      action="/shoes/<%= shoe.id %>/?_method=DELETE">
-      <button class="deleteShoe" type="submit">Delete Shoe</button> 
     </form>
-  </body>
-</html>
+

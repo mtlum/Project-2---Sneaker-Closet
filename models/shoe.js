@@ -8,6 +8,7 @@ const shoeSchema = new Schema({
   colour: String,
   year: Number,
   price: Number,
+  sold: Boolean,
 });
 
 module.exports = mongoose.model("Shoe", shoeSchema);

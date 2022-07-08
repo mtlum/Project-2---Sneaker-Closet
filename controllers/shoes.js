@@ -21,16 +21,24 @@ function index(req, res) {
 
 function show(req, res) {
   Shoe.findById(req.params.id, function (err, shoe) {
+    console.log(err, shoe);
     res.render("shoes/show.ejs", { shoe });
   });
 }
 
 function deleteShoe(req, res) {
   Shoe.findById(req.params.id, function (err, shoe) {
+    console.log("im in delete controller");
     shoe.remove();
     shoe.save(function (err) {
       res.redirect("/shoes");
     });
+  });
+}
+
+function update(req, res) {
+  Shoe.findById(req.params.id, function (err, book) {
+    res.render("shoes/updateShoe", { shoe, user });
   });
 }
 
@@ -40,4 +48,5 @@ module.exports = {
   index,
   show,
   delete: deleteShoe,
+  update,
 };
