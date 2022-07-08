@@ -19,7 +19,6 @@ function index(req, res) {
   });
 }
 
-HEAD
 function show(req, res) {
   Shoe.findById(req.params.id, function (err, shoe) {
     console.log(err, shoe);
@@ -47,7 +46,6 @@ function update(req, res) {
 //     res.render("shoes/show.ejs", { shoe });
 //   });
 // }
-refs/remotes/origin/main
 
 module.exports = {
   new: newShoe,
