@@ -45,7 +45,7 @@ function update(req, res) {
 //   Shoe.findById(req.params.id, function (err, shoe) {
 //     res.render("shoes/show.ejs", { shoe });
 //   });
-// }
+// }node
 
 module.exports = {
   new: newShoe,
