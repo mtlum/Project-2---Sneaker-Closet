@@ -1,10 +1,19 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: rgb(197, 187, 187);
+  background-color: rgb(255, 255, 255);
   /* color: rgb(0, 181, 226); */
   text-align: center;
   justify-content: center;
+  /* color: white; */
+}
+
+h1 {
+  font-size: 45px;
+}
+
+h2 {
+  font-size: 35px;
 }
 
 table {
